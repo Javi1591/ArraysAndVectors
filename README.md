@@ -1,54 +1,32 @@
-# ArraysAndVectors
+# Arrays and Basic 2D Arrays (Chapter 7)
 
-A C++ console application project designed to demonstrate working with arrays and vectors. Built using Visual Studio, this assignment encompasses declaring and manipulating one-dimensional and two-dimensional arrays, performing operations on `std::vector`, and using loops and functions for data processing.
+A C++ console application designed to demonstrate the use of one-dimensional and two-dimensional arrays, random number generation, string handling, and formatted output. This project emphasizes data storage, traversal, and simple analysis using loops.
 
----
+## Overview
+- Declares and initializes several arrays:
+  - `double dArr[5]` — holds random floating-point values.
+  - `long lArr[7]` — preloaded long integer values.
+  - `int iArr[3][5]` — a 3×5 integer matrix filled with random values.
+  - `char sName[30]` — a C-string for name storage.
+- Displays array contents, totals, and averages.
+- Finds the highest value in an array.
+- Populates a 2D array and prints it by row and by column.
+- Demonstrates character array operations and ASCII output.
 
-## Project Overview
+## Core Logic
+- Generates random numbers using `rand()` seeded with `srand((unsigned)time(NULL))`.
+- Iterates through each array using `for` loops and pointer-style indexing.
+- Reads a name into `sName` via `cin.getline` and prints the ASCII values for each character until the null terminator.
+- Uses `strcpy_s` to overwrite the name with `"Albert Einstein"` and prints the ASCII code of the 12th character.
+- Employs `setw` from `<iomanip>` to align 2D array output neatly.
 
-This project covers the following core tasks:
+## Input Validation
+- Random number ranges are controlled through modular arithmetic.
+- String input limited to 29 characters (plus null terminator) to prevent overflow.
 
-- Declaring and initializing one-dimensional arrays.
-- Declaring and initializing two-dimensional arrays.
-- Using `std::vector` to dynamically handle collections of data.
-- Generating random values to populate arrays and vectors.
-- Calculating totals, averages, minimums, and maximums using loops and function calls.
-- Displaying the data in formatted output for clarity.
-
----
-
-## Features
-
-- Prompt user for the size (or number of elements) for the one-dimensional vector or array.
-- Populate the data structure with random numbers (or user-provided input) within a set range.
-- Compute and display:
-  - Total sum of elements.
-  - Average of elements.
-  - Minimum and maximum values.
-- For two-dimensional arrays:
-  - Populate a row-by-row structure.
-  - Calculate row totals, column totals, and overall totals.
-  - Display the structure in a table format.
-- Validate user input to avoid invalid array/vector sizes or out-of-range values.
-
----
-
-## Technologies Used
-
-- Language: C++ (compatible with C++11 or later)
-- IDE: Visual Studio (2019/2022) or any environment supporting C++ development
-- Version Control: Git & GitHub
-
----
-
-## Getting Started
-
-### Prerequisites
-
-You will need a system with a C++ compiler (Visual Studio preferred) and basic familiarity with C++ basics—arrays, loops, functions, vectors.
-
-### Clone Repository
-
-```bash
-git clone https://github.com/Javi1591/ArraysAndVectors.git
-cd ArraysAndVectors
+## Build & Run
+- Visual Studio (Windows): open the solution or create a Console App and add the source file, then **Build → Run**.
+- g++ (CLI):
+  ```bash
+  g++ -std=c++11 -O2 -o Arrays nazarioCPP17.cpp
+  ./Arrays
